@@ -44,10 +44,7 @@ class RolePermissionManagerType(PermissionManagerType):
         :param workspace: The workspace in which we want to use this permission manager.
         """
 
-        return local_cache.get(
-            f"has_rbac_permission_{workspace.id}",
-            partial(LicenseHandler.workspace_has_feature, RBAC, workspace),
-        )
+        return True  # customizado Tu Socio,
 
     def get_role_operations(self, role: Role) -> List[str]:
         """

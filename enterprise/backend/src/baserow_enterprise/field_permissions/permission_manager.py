@@ -61,10 +61,7 @@ class FieldPermissionManagerType(PermissionManagerType):
         :param workspace: The workspace in which we want to use this permission manager.
         """
 
-        return local_cache.get(
-            f"has_rbac_permission_{workspace.id}",
-            partial(LicenseHandler.workspace_has_feature, RBAC, workspace),
-        )
+        return True  # customizado Tu Socio,
 
     def _filter_pertinent_checks(
         self, checks: List[PermissionCheck]
